@@ -12,101 +12,217 @@
 
 <body>
 
-  <header>
-    <h1>O-Type Stars in the Small Magellanic Cloud</h1>
-
-    <p>
-      Data integration, uncertainty modelling, and stellar population analysis
-      of approximately 450 massive stars.
-    </p>
+  <header class="project-header">
 
     <nav>
       <a href="../index.html">Home</a>
       <a href="../index.html#projects">Projects</a>
-      <a href="https://github.com/matthewduke36/MPhys-SMC-O-Star-Analysis" target="_blank">GitHub</a>
+      <a href="../index.html#contact">Contact</a>
     </nav>
+
+    <div class="project-hero">
+
+      <p class="project-eyebrow">MPhys Research Project</p>
+
+      <h1>O-Type Stars in the Small Magellanic Cloud</h1>
+
+      <p class="project-subtitle">
+        Building and analysing a catalogue of approximately 450 massive stars
+        using Python, uncertainty modelling, and stellar evolutionary models.
+      </p>
+
+      <div class="project-tags hero-tags">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+        <span>Monte Carlo</span>
+        <span>Statistical Modelling</span>
+      </div>
+
+    </div>
+
   </header>
 
 
-  <main>
+  <main class="project-page">
+
+    <section class="project-intro-grid">
+
+      <div>
+        <h2>Overview</h2>
+
+        <p>
+          This project formed my final-year MPhys research project at the
+          University of Sheffield. I constructed and analysed a catalogue of
+          approximately 450 O-type stars in the Small Magellanic Cloud by
+          combining multiple astronomical datasets.
+        </p>
+
+        <p>
+          The project required cleaning and cross-matching heterogeneous data,
+          deriving stellar parameters, propagating measurement uncertainties,
+          comparing different evolutionary models, and analysing the resulting
+          stellar population.
+        </p>
+      </div>
+
+      <div class="project-summary-card">
+
+        <h3>Project at a glance</h3>
+
+        <p><strong>Dataset:</strong> ~450 O-type stars</p>
+        <p><strong>Primary language:</strong> Python</p>
+        <p><strong>Methods:</strong> Monte Carlo simulation, statistical modelling, catalogue cross-matching</p>
+        <p><strong>Output:</strong> Cleaned catalogue, derived stellar parameters, population analysis</p>
+
+      </div>
+
+    </section>
+
 
     <section>
-      <h2>Overview</h2>
+
+      <h2>The Problem</h2>
 
       <p>
-        This project formed my final-year MPhys research project at the University
-        of Sheffield. I constructed and analysed a catalogue of approximately 450
-        O-type stars in the Small Magellanic Cloud by combining multiple
-        astronomical datasets.
+        Massive O-type stars strongly influence the evolution of their host
+        galaxies, but deriving a consistent picture of their properties requires
+        combining information from several different observational catalogues.
       </p>
 
       <p>
-        The work involved catalogue cross-matching, photometric calibration,
-        uncertainty propagation, Monte Carlo methods, stellar evolutionary model
-        comparison, and population-level statistical analysis.
+        The project therefore focused on creating a reliable and internally
+        consistent stellar dataset before using it to investigate the luminosity,
+        mass, age, and spatial distributions of the population.
       </p>
+
     </section>
 
 
     <section>
-      <h2>Research Questions</h2>
 
-      <ul>
-        <li>How can heterogeneous astronomical catalogues be combined into a consistent dataset?</li>
-        <li>What are the luminosities, masses, ages, and spatial properties of the O-star population?</li>
-        <li>How strongly do different evolutionary model grids affect the inferred stellar parameters?</li>
-        <li>How does the observed mass distribution compare with a standard initial mass function?</li>
-      </ul>
+      <h2>Analysis Pipeline</h2>
+
+      <div class="pipeline-grid">
+
+        <div class="pipeline-step">
+          <span>01</span>
+          <h3>Data Integration</h3>
+          <p>
+            Cross-matched stellar catalogues and combined spectral classifications,
+            coordinates, and optical photometry.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>02</span>
+          <h3>Validation</h3>
+          <p>
+            Identified duplicate and inconsistent entries and applied consistent
+            rules across the full catalogue.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>03</span>
+          <h3>Parameter Derivation</h3>
+          <p>
+            Applied luminosity-class-dependent calibrations to estimate effective
+            temperatures, bolometric corrections, and stellar luminosities.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>04</span>
+          <h3>Uncertainty Modelling</h3>
+          <p>
+            Propagated photometric, distance, and calibration uncertainties using
+            Monte Carlo simulations.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>05</span>
+          <h3>Model Comparison</h3>
+          <p>
+            Compared the derived stellar parameters with multiple evolutionary
+            model grids to estimate masses and ages.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>06</span>
+          <h3>Population Analysis</h3>
+          <p>
+            Investigated the HR diagram, mass function, age distribution, and
+            spatial structure of the final sample.
+          </p>
+        </div>
+
+      </div>
+
     </section>
 
 
     <section>
-      <h2>Methodology</h2>
 
-      <ol>
-        <li>Cross-matched stellar catalogues and resolved inconsistent entries.</li>
-        <li>Combined spectral classifications with optical photometry.</li>
-        <li>Applied luminosity-class-dependent temperature and bolometric correction calibrations.</li>
-        <li>Derived stellar luminosities from photometric and distance information.</li>
-        <li>Propagated uncertainties using Monte Carlo simulations.</li>
-        <li>Compared derived parameters with stellar evolutionary models to estimate masses and ages.</li>
-        <li>Analysed HR diagrams, mass functions, age distributions, and spatial structure.</li>
-      </ol>
-    </section>
-
-
-    <section>
       <h2>Key Results</h2>
 
-      <ul>
-        <li>Produced a cleaned and internally consistent catalogue of approximately 450 O-type stars.</li>
-        <li>Derived stellar luminosities with asymmetric propagated uncertainties.</li>
-        <li>Estimated masses and ages using multiple stellar evolutionary model grids.</li>
-        <li>Identified differences between model grids in the inferred age distribution and high-mass population.</li>
-        <li>Compared the observed mass distribution with a Salpeter-like initial mass function.</li>
-        <li>Mapped the O-star population across the Small Magellanic Cloud.</li>
-      </ul>
+      <div class="results-grid">
+
+        <div class="result-card">
+          <h3>~450</h3>
+          <p>O-type stars in the final cleaned catalogue.</p>
+        </div>
+
+        <div class="result-card">
+          <h3>Monte Carlo</h3>
+          <p>Uncertainty propagation used to derive asymmetric luminosity errors.</p>
+        </div>
+
+        <div class="result-card">
+          <h3>Multiple Models</h3>
+          <p>
+            Different stellar evolutionary grids produced measurable differences
+            in inferred masses and ages.
+          </p>
+        </div>
+
+      </div>
+
     </section>
 
 
     <section>
+
       <h2>Selected Visualisations</h2>
+
+      <p>
+        A selection of outputs illustrating the stellar population and its
+        surrounding environment.
+      </p>
 
       <div class="project-gallery">
 
         <figure>
-          <img src="../images/SMC_Ostars_spatial_distribution_age_350um.png"
-               alt="Age-coded spatial distribution of O-type stars">
+          <img
+            src="../images/SMC_Ostars_spatial_distribution_age_350um.png"
+            alt="Age-coded spatial distribution of O-type stars in the Small Magellanic Cloud"
+          >
+
           <figcaption>
-            Spatial distribution of the O-star sample colour-coded by inferred stellar age.
+            Spatial distribution of the O-star sample colour-coded by inferred
+            stellar age and shown against 350 μm emission.
           </figcaption>
         </figure>
 
       </div>
+
     </section>
 
 
     <section>
+
       <h2>Technical Skills</h2>
 
       <div class="project-tags">
@@ -114,37 +230,46 @@
         <span>Pandas</span>
         <span>NumPy</span>
         <span>Matplotlib</span>
-        <span>Monte Carlo</span>
+        <span>Monte Carlo Simulation</span>
         <span>Statistical Modelling</span>
         <span>Data Validation</span>
         <span>Catalogue Cross-Matching</span>
+        <span>Scientific Visualisation</span>
+        <span>Technical Documentation</span>
       </div>
+
     </section>
 
 
     <section>
+
       <h2>Project Outputs</h2>
 
       <p>
-        The final derived catalogue and associated results were provided to my
+        The completed catalogue and associated results were provided to my
         project supervisor for use in ongoing research.
       </p>
 
-      <p>
-        <a href="https://github.com/matthewduke36/MPhys-SMC-O-Star-Analysis"
-           target="_blank"
-           class="project-link">
-          View GitHub Repository →
-        </a>
-      </p>
+      <div class="output-links">
 
-      <p>
-        <a href="https://github.com/matthewduke36/MPhys-SMC-O-Star-Analysis/blob/main/dissertation/MPhys_Dissertation.pdf"
-           target="_blank"
-           class="project-link">
-          Read Dissertation →
+        <a
+          href="https://github.com/matthewduke36/MPhys-SMC-O-Star-Analysis/blob/main/dissertation/MPhys_Dissertation.pdf"
+          target="_blank"
+          class="output-button"
+        >
+          Read Dissertation
         </a>
-      </p>
+
+        <a
+          href="https://github.com/matthewduke36/MPhys-SMC-O-Star-Analysis"
+          target="_blank"
+          class="output-button secondary"
+        >
+          View Project Files
+        </a>
+
+      </div>
+
     </section>
 
   </main>
