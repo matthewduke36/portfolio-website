@@ -25,14 +25,6 @@
       using Python, uncertainty modelling, and stellar evolutionary models.
     </p>
 
-    <div class="project-tags hero-tags">
-      <span>Python</span>
-      <span>Pandas</span>
-      <span>NumPy</span>
-      <span>Monte Carlo</span>
-      <span>Statistical Modelling</span>
-    </div>
-
     <nav>
       <a href="../index.html">Home</a>
       <a href="../index.html#projects">Projects</a>
@@ -53,9 +45,10 @@
 
         <p>
           This project formed my final-year MPhys research project at the
-          University of Sheffield. I constructed and analysed a catalogue of
-          approximately 450 O-type stars in the Small Magellanic Cloud by
-          combining multiple astronomical datasets.
+          University of Sheffield. I constructed a catalogue of
+          448 O-type stars in the Small Magellanic Cloud by
+          combining multiple astronomical datasets. This fully completed catalogue was
+          then analysed to investigate the properties and trends within this population.
         </p>
 
         <p>
@@ -82,21 +75,34 @@
 
     <section>
 
-      <h2>The Problem</h2>
+  <h2>The Problem</h2>
 
-      <p>
-        Massive O-type stars strongly influence the evolution of their host
-        galaxies, but deriving a consistent picture of their properties requires
-        combining information from several different observational catalogues.
-      </p>
+<p>
+  Massive O-type stars strongly influence the evolution of galaxies because of their intense radiation,
+  stellar winds, and eventual supernovae. The Small Magellanic Cloud is a nearby, metal-poor galaxy that provides
+  an important environment for studying how stars evolve under conditions
+  that differ from those in the Milky Way. The SMC's comparatively low metallicity makes it especially useful for
+  testing stellar evolutionary models and investigating massive-star populations
+  in environments more similar to those found in the earlier Universe.
+</p>
 
-      <p>
-        The project therefore focused on creating a reliable and internally
-        consistent stellar dataset before using it to investigate the luminosity,
-        mass, age, and spatial distributions of the population.
-      </p>
+<p>
+  However, building a consistent picture of the SMC's O-star population requires
+  combining information from several different observational catalogues collected
+  over the years. These datasets contain different photometric measurements,
+  spectral classifications, identifiers, and levels of uncertainty, so they cannot
+  simply be merged without careful validation.
+</p>
 
-    </section>
+<p>
+  The project therefore focused on constructing a reliable and internally
+  consistent catalogue of O-type stars before deriving their physical properties
+  and investigating the luminosity, mass, age, and spatial distributions of the
+  population to determine whether and how these differ in a low-metallicity
+  environment.
+</p>
+
+</section>
 
 
     <section>
@@ -118,7 +124,7 @@
           <span>02</span>
           <h3>Validation</h3>
           <p>
-            Identified duplicate and inconsistent entries and applied consistent
+            Identified and eliminated duplicate and inconsistent entries by applying consistent
             rules across the full catalogue.
           </p>
         </div>
@@ -127,8 +133,8 @@
           <span>03</span>
           <h3>Parameter Derivation</h3>
           <p>
-            Applied luminosity-class-dependent calibrations to estimate effective
-            temperatures, bolometric corrections, and stellar luminosities.
+            Derived and applied luminosity-class-dependent calibrations to estimate effective
+            temperatures and bolometric corrections in order to obtain stellar luminosities.
           </p>
         </div>
 
@@ -145,7 +151,7 @@
           <span>05</span>
           <h3>Model Comparison</h3>
           <p>
-            Compared the derived stellar parameters with multiple evolutionary
+            Used the derived stellar parameters with multiple evolutionary
             model grids to estimate masses and ages.
           </p>
         </div>
@@ -154,8 +160,8 @@
           <span>06</span>
           <h3>Population Analysis</h3>
           <p>
-            Investigated the HR diagram, mass function, age distribution, and
-            spatial structure of the final sample.
+            Investigated the properties of the SMC massive star population by deriving and using the HR diagram, initial mass function, age distribution, and
+            spatial structure of the sample.
           </p>
         </div>
 
@@ -171,22 +177,30 @@
       <div class="results-grid">
 
         <div class="result-card">
-          <h3>~450</h3>
-          <p>O-type stars in the final cleaned catalogue.</p>
-        </div>
+      <h3>Mass Distribution</h3>
+      <p>
+        The observed high-mass population showed a deficit relative to a
+        Salpeter-like initial mass function, with the inferred slope becoming
+        steeper when cut-offs were applied that removed the lower-mass stars in the sample.
+      </p>
+    </div>
 
-        <div class="result-card">
-          <h3>Monte Carlo</h3>
-          <p>Uncertainty propagation used to derive asymmetric luminosity errors.</p>
-        </div>
+    <div class="result-card">
+      <h3>Evolutionary Models Matter</h3>
+      <p>
+        Different stellar evolutionary model grids produced systematically
+        different inferred age distributions, with the non-rotating models
+        tending towards older stellar ages.
+      </p>
+    </div>
 
-        <div class="result-card">
-          <h3>Multiple Models</h3>
-          <p>
-            Different stellar evolutionary grids produced measurable differences
-            in inferred masses and ages.
-          </p>
-        </div>
+    <div class="result-card">
+      <h3>Spatial Structure</h3>
+      <p>
+        The O-star population was mapped across the Small Magellanic Cloud,
+        revealing clear concentrations around major star-forming regions, which is typically expected for massive star populations.
+      </p>
+    </div>
 
       </div>
 
@@ -201,14 +215,14 @@
 
   <div class="project-gallery">
 
-    <figure>
-      <img
-        src="../images/HRD_models.png"
-        alt="Hertzsprung-Russell diagram with evolutionary models and isochrones"
-      >
+    <figure class="gallery-feature">
+  <img
+    src="../images/HRD_models.png"
+    alt="Hertzsprung-Russell diagram with evolutionary models and isochrones"
+  >
       <figcaption>
         Hertzsprung–Russell diagram showing the derived stellar population
-        alongside evolutionary model tracks and isochrones.
+        alongside isochrones (left) and evolutionary model tracks (right).
       </figcaption>
     </figure>
 
@@ -218,7 +232,7 @@
         alt="Observed stellar mass distribution compared with a Salpeter initial mass function"
       >
       <figcaption>
-        Observed stellar mass distribution compared with a Salpeter-like initial
+        Distribution of modelled initial stellar masses compared with a Salpeter-like initial
         mass function.
       </figcaption>
     </figure>
@@ -229,7 +243,7 @@
         alt="Spatial distribution of O-type stars across H-alpha emission"
       >
       <figcaption>
-        Spatial distribution of the O-star population shown against H-alpha emission.
+        Spatial distribution of the O-star population shown against H-alpha emission which shows areas of ionised gas, often where star formation occurs.
       </figcaption>
     </figure>
 
@@ -239,8 +253,8 @@
         alt="Age-coded spatial distribution of O-type stars across 350 micron emission"
       >
       <figcaption>
-        Spatial distribution colour-coded by inferred stellar age and shown against
-        350 μm emission.
+        Spatial distribution colour-coded by modelled stellar age and shown against
+        350 μm emission which shows areas of cold dust.
       </figcaption>
     </figure>
 
