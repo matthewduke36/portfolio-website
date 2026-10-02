@@ -158,6 +158,32 @@ h2 {
   }
 }
 
+.contact-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contact-button.secondary {
+  background: #e8edf4;
+  color: #1f1f1f;
+}
+
+.contact-button:hover {
+  opacity: 0.9;
+}
+
 /* ---------- PROJECT PAGE ---------- */
 
 .project-header {
