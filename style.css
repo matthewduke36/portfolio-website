@@ -325,6 +325,13 @@ h2 {
   color: #555;
 }
 
+.gallery-feature {
+  grid-column: 1 / -1;
+}
+
+.gallery-feature img {
+  max-height: 500px;
+}
 
 /* OUTPUT BUTTONS */
 
