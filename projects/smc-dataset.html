@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SMC O-Star Dataset | Matthew Duke</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .dataset-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 24px 80px;
+    }
+
+    .dataset-summary {
+      margin-bottom: 30px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      padding: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th {
+      background: #f3f4f6;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .dataset-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px 0 30px;
+    }
+
+    .dataset-button {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      background: #2563eb;
+      color: white;
+    }
+
+    .dataset-button.secondary {
+      background: #e8edf4;
+      color: #1f1f1f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="project-header">
+
+    <div class="project-hero">
+
+      <p class="project-eyebrow">Project Dataset</p>
+
+      <h1>SMC O-Star Catalogue</h1>
+
+      <p class="project-subtitle">
+        Final derived catalogue from the MPhys census of O-type stars
+        in the Small Magellanic Cloud.
+      </p>
+
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="smc-o-stars.html">Project</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <main class="dataset-page">
+
+    <section class="dataset-summary">
+
+      <h2>About the Dataset</h2>
+
+      <p>
+        This catalogue contains the final adopted stellar properties used in the
+        analysis of the Small Magellanic Cloud O-star population. It includes
+        observational information alongside derived quantities such as stellar
+        temperatures, luminosities, masses, and ages.
+      </p>
+
+      <div class="dataset-actions">
+
+        <a
+          href="../files/smc-o-stars/MPS431_stellar_properties_adopted.csv"
+          class="dataset-button"
+          download
+        >
+          Download CSV
+        </a>
+
+        <a
+          href="smc-o-stars.html"
+          class="dataset-button secondary"
+        >
+          Back to Project
+        </a>
+
+      </div>
+
+    </section>
+
+    <section>
+
+      <h2>Dataset Preview</h2>
+
+      <div class="table-wrapper">
+
+        <table id="dataset-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+    const csvPath = "../files/smc-o-stars/MPS431_stellar_properties_adopted.csv";
+
+    fetch(csvPath)
+      .then(response => response.text())
+      .then(csv => {
+
+        const rows = csv
+          .trim()
+          .split("\n")
+          .map(row => row.split(","));
+
+        const headers = rows[0];
+        const dataRows = rows.slice(1);
+
+        const thead = document.querySelector("#dataset-table thead");
+        const tbody = document.querySelector("#dataset-table tbody");
+
+        const headerRow = document.createElement("tr");
+
+        headers.forEach(header => {
+          const th = document.createElement("th");
+          th.textContent = header;
+          headerRow.appendChild(th);
+        });
+
+        thead.appendChild(headerRow);
+
+        dataRows.forEach(row => {
+
+          const tr = document.createElement("tr");
+
+          row.forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value;
+            tr.appendChild(td);
+          });
+
+          tbody.appendChild(tr);
+
+        });
+
+      })
+      .catch(error => {
+        console.error("Error loading CSV:", error);
+      });
+  </script>
+
+</body>
+
+</html>
