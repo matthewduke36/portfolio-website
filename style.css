@@ -1,3 +1,8 @@
+
+/* ========================================
+   GENERAL WEBSITE STYLING
+======================================== */
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -54,12 +59,15 @@ h2 {
   margin-bottom: 24px;
 }
 
+
+/* ========================================
+   HOMEPAGE - ABOUT
+======================================== */
+
 #about p {
   font-size: 1.05rem;
   max-width: 900px;
 }
-
-/* ABOUT SECTION LINK */
 
 .about-link {
   display: inline-block;
@@ -72,6 +80,11 @@ h2 {
 .about-link:hover {
   text-decoration: underline;
 }
+
+
+/* ========================================
+   HOMEPAGE - PROJECTS
+======================================== */
 
 .project-card {
   display: grid;
@@ -135,41 +148,13 @@ h2 {
   text-decoration: underline;
 }
 
+
+/* ========================================
+   HOMEPAGE - CONTACT
+======================================== */
+
 #contact {
   padding-bottom: 20px;
-}
-
-@media (max-width: 800px) {
-  header {
-    padding: 50px 20px;
-  }
-
-  header h1 {
-    font-size: 2.4rem;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 8px 10px;
-  }
-
-  main {
-    padding: 35px 18px 60px;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .project-card {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 22px;
-  }
-
-  .project-content h3 {
-    font-size: 1.4rem;
-  }
 }
 
 .contact-links {
@@ -198,7 +183,10 @@ h2 {
   opacity: 0.9;
 }
 
-/* ---------- PROJECT PAGE ---------- */
+
+/* ========================================
+   PROJECT DETAIL PAGE
+======================================== */
 
 .project-header {
   padding: 60px 20px;
@@ -244,7 +232,6 @@ h2 {
   margin-top: 22px;
 }
 
-
 .project-page {
   max-width: 1050px;
   margin: 0 auto;
@@ -252,7 +239,7 @@ h2 {
 }
 
 
-/* OVERVIEW */
+/* PROJECT OVERVIEW */
 
 .project-intro-grid {
   display: grid;
@@ -307,7 +294,7 @@ h2 {
 }
 
 
-/* RESULTS */
+/* PROJECT RESULTS */
 
 .results-grid {
   display: grid;
@@ -332,7 +319,7 @@ h2 {
 }
 
 
-/* VISUALISATIONS */
+/* PROJECT VISUALISATIONS */
 
 .project-gallery {
   display: grid;
@@ -373,7 +360,8 @@ h2 {
   max-height: 500px;
 }
 
-/* OUTPUT BUTTONS */
+
+/* PROJECT OUTPUT BUTTONS */
 
 .output-links {
   display: flex;
@@ -398,38 +386,9 @@ h2 {
 }
 
 
-/* MOBILE */
-
-@media (max-width: 850px) {
-
-  .project-hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .project-intro-grid,
-  .pipeline-grid,
-  .results-grid,
-  .project-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .project-gallery img {
-    max-height: none;
-  }
-}
-
-
-
-/* ABOUT INTRODUCTION */
-
-#about-me p {
-  font-size: 1.05rem;
-  max-width: 900px;
-  line-height: 1.75;
-  margin-bottom: 18px;
-}
-
-/* ABOUT PAGE NAVIGATION */
+/* ========================================
+   ABOUT PAGE - GENERAL
+======================================== */
 
 .about-page {
   max-width: 950px;
@@ -439,6 +398,13 @@ h2 {
 
 .about-page section {
   margin-bottom: 65px;
+}
+
+#about-me p {
+  font-size: 1.05rem;
+  max-width: 900px;
+  line-height: 1.75;
+  margin-bottom: 18px;
 }
 
 .about-card {
@@ -466,75 +432,10 @@ h2 {
   margin-bottom: 18px;
 }
 
-@media (max-width: 800px) {
-  .about-page {
-    padding: 35px 18px 60px;
-  }
 
-  .about-card {
-    padding: 22px;
-  }
-}
-
-
-
-/* ---------- ABOUT PAGE PHOTOS ---------- */
-
-
-/* VARSITY AND NATIONALS PHOTOS */
-
-.personal-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  margin: 25px 0 35px;
-}
-
-.personal-gallery figure {
-  margin: 0;
-  width: 390px;
-  max-width: 100%;
-}
-
-.personal-gallery img {
-  display: block;
-  width: 100%;
-  height: 285px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-.personal-gallery figcaption {
-  margin-top: 8px;
-  font-size: 0.85rem;
-  color: #555;
-  text-align: center;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-  .about-intro-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .graduation-photo {
-    width: 345px;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .personal-gallery figure {
-    width: 390px;
-    max-width: 100%;
-  }
-}
-
-
-/* EDUCATION SECTION WITH GRADUATION PHOTO */
+/* ========================================
+   ABOUT PAGE - EDUCATION
+======================================== */
 
 .education-grid {
   display: grid;
@@ -547,22 +448,145 @@ h2 {
   min-width: 0;
 }
 
+
+/* GRADUATION PHOTO */
+
 .education-grid .graduation-photo {
   width: 100%;
   margin: 0;
 }
 
 .education-grid .graduation-photo img {
+  display: block;
   width: 100%;
   height: auto;
   max-height: 480px;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-/* MOBILE */
+.graduation-photo figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   ABOUT PAGE - PERSONAL LIFE PHOTOS
+======================================== */
+
+.personal-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 25px 0 35px;
+}
+
+.personal-gallery figure {
+  margin: 0;
+  width: 390px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.personal-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 285px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.personal-gallery figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 850px) {
+
+  /* PROJECT DETAIL PAGE */
+
+  .project-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-intro-grid,
+  .pipeline-grid,
+  .results-grid,
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery img {
+    max-height: none;
+  }
+
+}
+
 
 @media (max-width: 800px) {
+
+  /* GENERAL */
+
+  header {
+    padding: 50px 20px;
+  }
+
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 8px 10px;
+  }
+
+  main {
+    padding: 35px 18px 60px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  /* HOMEPAGE */
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+  }
+
+  .project-content h3 {
+    font-size: 1.4rem;
+  }
+
+  /* ABOUT PAGE */
+
+  .about-page {
+    padding: 35px 18px 60px;
+  }
+
+  .about-card {
+    padding: 22px;
+  }
+
+  /* EDUCATION */
+
   .education-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -573,4 +597,12 @@ h2 {
     max-width: 345px;
     margin: 0 auto;
   }
+
+  /* PERSONAL PHOTOS */
+
+  .personal-gallery figure {
+    width: 390px;
+    max-width: 100%;
+  }
+
 }
