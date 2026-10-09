@@ -417,3 +417,60 @@ h2 {
     max-height: none;
   }
 }
+
+
+/* ABOUT INTRODUCTION */
+
+#about-me p {
+  font-size: 1.05rem;
+  max-width: 900px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+/* ABOUT PAGE NAVIGATION */
+
+.about-page {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px 24px 80px;
+}
+
+.about-page section {
+  margin-bottom: 65px;
+}
+
+.about-card {
+  background: white;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-card h3 {
+  font-size: 1.3rem;
+  margin: 26px 0 12px;
+}
+
+.about-card h3:first-child {
+  margin-top: 0;
+}
+
+.about-card p {
+  margin: 0 0 18px;
+  line-height: 1.75;
+}
+
+.about-card .project-tags {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 800px) {
+  .about-page {
+    padding: 35px 18px 60px;
+  }
+
+  .about-card {
+    padding: 22px;
+  }
+}
