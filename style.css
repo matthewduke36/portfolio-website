@@ -480,37 +480,6 @@ h2 {
 
 /* ---------- ABOUT PAGE PHOTOS ---------- */
 
-/* GRADUATION PHOTO */
-
-.about-intro-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 345px;
-  gap: 35px;
-  align-items: start;
-}
-
-.graduation-photo {
-  margin: 0;
-  width: 345px;
-  max-width: 100%;
-}
-
-.graduation-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-.graduation-photo figcaption {
-  margin-top: 8px;
-  font-size: 0.8rem;
-  color: #555;
-  text-align: center;
-}
-
 
 /* VARSITY AND NATIONALS PHOTOS */
 
@@ -561,5 +530,47 @@ h2 {
   .personal-gallery figure {
     width: 390px;
     max-width: 100%;
+  }
+}
+
+
+/* EDUCATION SECTION WITH GRADUATION PHOTO */
+
+.education-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 345px;
+  gap: 35px;
+  align-items: center;
+}
+
+.education-content {
+  min-width: 0;
+}
+
+.education-grid .graduation-photo {
+  width: 100%;
+  margin: 0;
+}
+
+.education-grid .graduation-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .education-grid .graduation-photo {
+    width: 100%;
+    max-width: 345px;
+    margin: 0 auto;
   }
 }
