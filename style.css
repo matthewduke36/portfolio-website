@@ -497,9 +497,8 @@ h2 {
 .personal-gallery img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 285px;
-  object-fit: contain;
+  height: 285px;
+  object-fit: cover;
   border-radius: 12px;
 }
 
