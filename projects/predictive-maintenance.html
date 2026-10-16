@@ -157,7 +157,7 @@
           <h3>Model Optimisation</h3>
           <p>
             Investigated Decision Tree complexity and tested 100 Random
-            Forest hyperparameter combinations using RandomizedSearchCV.
+            Forest hyperparameter combinations using RandomizedSearchCV to identify settings that improve classification performance and balance failure detection against false alarms..
           </p>
         </div>
 
@@ -195,7 +195,7 @@
         <div class="result-card">
           <h3>Optimised Random Forest</h3>
           <p>
-            The optimised Random Forest achieved the highest mean
+            An optimised Random Forest achieved the highest mean
             cross-validation F1-score of 0.761, compared with 0.568
             for the original configuration. Its precision increased
             substantially to 0.869, with recall of 0.679.
@@ -215,14 +215,81 @@
         <div class="result-card">
           <h3>Classification Threshold</h3>
           <p>
-            Adjusting the optimised Random Forest's classification
-            threshold to approximately 0.457 produced an exploratory
-            F1-score of 0.768 using out-of-fold predictions, slightly
-            improving the balance between precision and recall.
+            Lowering the optimised Random Forest's failure prediction threshold from 0.5 to 0.457 slightly improved its F1-score to 0.768. This allowed the model to detect more genuine failures, but also increased the number of false alarms, demonstrating the trade-off between recall and precision.
           </p>
         </div>
 
       </div>
+
+      
+<h3>Model Performance Comparison</h3>
+
+<p>
+  The models were compared using stratified five-fold
+  cross-validation on the training dataset. Precision measures
+  how many predicted failures were genuine, while recall measures
+  how many actual failures were correctly identified.
+  F1-score provides a combined measure of both.
+</p>
+
+<div class="table-wrapper">
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Precision</th>
+        <th>Recall</th>
+        <th>F1-score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Baseline</td>
+        <td>0.000</td>
+        <td>0.000</td>
+        <td>0.000</td>
+      </tr>
+      <tr>
+        <td>Logistic Regression</td>
+        <td>0.137</td>
+        <td>0.804</td>
+        <td>0.235</td>
+      </tr>
+      <tr>
+        <td>Decision Tree (depth 5)</td>
+        <td>0.304</td>
+        <td>0.860</td>
+        <td>0.449</td>
+      </tr>
+      <tr>
+        <td>Decision Tree (depth 20)</td>
+        <td>0.694</td>
+        <td>0.565</td>
+        <td>0.619</td>
+      </tr>
+      <tr>
+        <td>Random Forest</td>
+        <td>0.447</td>
+        <td>0.782</td>
+        <td>0.568</td>
+      </tr>
+      <tr class="best-model">
+        <td>Optimised Random Forest</td>
+        <td>0.869</td>
+        <td>0.679</td>
+        <td>0.761</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+  The optimised Random Forest achieved the highest F1-score
+  (0.761), while the depth-5 Decision Tree identified the greatest
+  proportion of actual failures (recall of 0.860).
+  The preferred model therefore depends on whether reducing
+  false alarms or detecting more failures is the greater priority.
+</p>
 
     </section>
 
