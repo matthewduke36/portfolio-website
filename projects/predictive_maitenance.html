@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Predictive Maintenance ML | Matthew Duke</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="project-header">
+    <div class="project-hero">
+
+      <p class="project-eyebrow">Independent Machine Learning Project</p>
+
+      <h1>Predictive Maintenance Using Machine Learning</h1>
+
+      <p class="project-subtitle">
+        Investigating industrial machine failures using Python,
+        classification algorithms, and statistical model evaluation.
+      </p>
+
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../index.html#projects" aria-current="page">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main class="project-page">
+
+    <!-- OVERVIEW -->
+    <section class="project-intro-grid">
+
+      <div>
+        <h2>Overview</h2>
+
+        <p>
+          This independent project investigates whether machine operating
+          conditions can be used to classify equipment failures through
+          supervised machine learning.
+        </p>
+
+        <p>
+          Using the synthetic AI4I 2020 Predictive Maintenance dataset,
+          I explored relationships between operating conditions and machine
+          failure, developed several classification models, and investigated
+          how model complexity and hyperparameter optimisation affect
+          predictive performance.
+        </p>
+
+        <p>
+          Particular attention was given to the challenges of class
+          imbalance and the trade-off between identifying genuine failures
+          and generating unnecessary maintenance warnings.
+        </p>
+      </div>
+
+      <div class="project-summary-card">
+        <h3>Project at a glance</h3>
+
+        <p><strong>Dataset:</strong> 10,000 simulated machine observations</p>
+        <p><strong>Primary language:</strong> Python</p>
+        <p><strong>Methods:</strong> Classification, cross-validation, hyperparameter optimisation</p>
+        <p><strong>Output:</strong> Model comparison, feature importance, classification threshold analysis</p>
+      </div>
+
+    </section>
+
+
+    <!-- THE PROBLEM -->
+    <section>
+
+      <h2>The Problem</h2>
+
+      <p>
+        Unexpected machinery failures can result in expensive repairs,
+        unplanned downtime, and disruption to industrial operations.
+        Identifying operating conditions associated with failures could
+        help maintenance teams identify equipment requiring attention.
+      </p>
+
+      <p>
+        However, machine failures are relatively rare. Within the AI4I
+        dataset, only 339 of the 10,000 observations (3.39%) represent
+        failures. A model that simply predicts normal operation could
+        therefore achieve high accuracy without identifying a single
+        genuine failure.
+      </p>
+
+      <p>
+        This project investigates whether classification models can
+        identify failures more effectively while balancing the competing
+        objectives of detecting genuine failures and avoiding false alarms.
+      </p>
+
+    </section>
+
+
+    <!-- ANALYSIS PIPELINE -->
+    <section>
+
+      <h2>Analysis Pipeline</h2>
+
+      <div class="pipeline-grid">
+
+        <div class="pipeline-step">
+          <span>01</span>
+          <h3>Exploratory Analysis</h3>
+          <p>
+            Investigated failure rates across temperature, rotational speed,
+            torque, and tool wear, identifying potentially non-linear
+            relationships with machine failure.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>02</span>
+          <h3>Data Preparation</h3>
+          <p>
+            Selected operating measurements, excluded identifiers and
+            failure-type indicators to avoid target leakage, and created
+            stratified training and testing subsets.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>03</span>
+          <h3>Model Development</h3>
+          <p>
+            Trained Logistic Regression, Decision Tree, and Random Forest
+            classifiers, comparing performance against a baseline model.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>04</span>
+          <h3>Cross-Validation</h3>
+          <p>
+            Applied stratified five-fold cross-validation to evaluate
+            precision, recall, and F1-score across multiple subsets
+            of the training data.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>05</span>
+          <h3>Model Optimisation</h3>
+          <p>
+            Investigated Decision Tree complexity and tested 100 Random
+            Forest hyperparameter combinations using RandomizedSearchCV.
+          </p>
+        </div>
+
+        <div class="pipeline-step">
+          <span>06</span>
+          <h3>Model Interpretation</h3>
+          <p>
+            Investigated permutation feature importance and classification
+            thresholds to understand model behaviour and the trade-off
+            between missed failures and false alarms.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- KEY RESULTS -->
+    <section>
+
+      <h2>Key Results</h2>
+
+      <div class="results-grid">
+
+        <div class="result-card">
+          <h3>Baseline Performance</h3>
+          <p>
+            The baseline achieved approximately 96.6% accuracy while
+            identifying no failures. This demonstrated why accuracy
+            alone was unsuitable for the imbalanced dataset.
+          </p>
+        </div>
+
+        <div class="result-card">
+          <h3>Optimised Random Forest</h3>
+          <p>
+            The optimised Random Forest achieved the highest mean
+            cross-validation F1-score of 0.761, compared with 0.568
+            for the original configuration. Its precision increased
+            substantially to 0.869, with recall of 0.679.
+          </p>
+        </div>
+
+        <div class="result-card">
+          <h3>Decision Tree Complexity</h3>
+          <p>
+            A shallower Decision Tree achieved the highest recall
+            (0.860), while increasing tree depth improved precision
+            at the expense of missing a greater proportion of
+            genuine failures.
+          </p>
+        </div>
+
+        <div class="result-card">
+          <h3>Classification Threshold</h3>
+          <p>
+            Adjusting the optimised Random Forest's classification
+            threshold to approximately 0.457 produced an exploratory
+            F1-score of 0.768 using out-of-fold predictions, slightly
+            improving the balance between precision and recall.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VISUALISATIONS -->
+    <section>
+
+      <h2>Selected Visualisations</h2>
+
+      <p>
+        Selected outputs illustrating model performance, influential
+        operating measurements, and the effect of classification thresholds.
+      </p>
+
+      <div class="project-gallery">
+
+        <figure class="gallery-feature">
+          <img
+            src="../images/model_comparison.png"
+            alt="Comparison of precision, recall and F1-score across machine failure classification models"
+          >
+          <figcaption>
+            Five-fold cross-validation performance of the classification
+            models. The optimised Random Forest achieved the highest
+            F1-score, while the depth-5 Decision Tree achieved the
+            highest recall.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="../images/feature_importance.png"
+            alt="Permutation feature importance for the initial Random Forest model"
+          >
+          <figcaption>
+            Permutation importance analysis identifying rotational speed,
+            torque, and tool wear as influential predictors for the
+            initial Random Forest.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="../images/threshold_analysis.png"
+            alt="Precision, recall and F1-score as functions of classification threshold"
+          >
+          <figcaption>
+            Effect of classification threshold on precision, recall, and
+            F1-score for the optimised Random Forest. A threshold of
+            approximately 0.457 maximised F1-score on the
+            cross-validated training predictions.
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRACTICAL IMPLICATIONS -->
+    <section>
+
+      <h2>Practical Implications</h2>
+
+      <p>
+        The highest F1-score does not necessarily correspond to the most
+        appropriate model for every industrial application. The relative
+        costs of missed failures and unnecessary inspections are important
+        considerations when selecting a model and classification threshold.
+      </p>
+
+      <p>
+        For example, if a missed failure hypothetically resulted in
+        £50,000 of repair costs and downtime, while a false alarm
+        required a £500 inspection, detecting a greater proportion of
+        failures could be economically preferable even if this produced
+        additional false alarms.
+      </p>
+
+      <p>
+        This highlights the potential value of cost-sensitive model
+        evaluation, where maintenance decisions are guided by the
+        operational consequences of prediction errors rather than
+        statistical performance alone.
+      </p>
+
+    </section>
+
+
+    <!-- LIMITATIONS -->
+    <section>
+
+      <h2>Limitations</h2>
+
+      <p>
+        The AI4I dataset is synthetic and contains simulated failure
+        outcomes. The models classify machine failure conditions rather
+        than predicting when future breakdowns will occur, and their
+        performance does not establish suitability for deployment
+        on real industrial equipment.
+      </p>
+
+      <p>
+        The optimised Random Forest's cross-validation performance may
+        be optimistic because hyperparameters were selected using the
+        same validation folds. The original test subset was also
+        examined during model development, so it was not retained
+        as a completely independent final evaluation dataset.
+      </p>
+
+    </section>
+
+
+    <!-- TECHNICAL SKILLS -->
+    <section>
+
+      <h2>Technical Skills</h2>
+
+      <div class="project-tags">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+        <span>Matplotlib</span>
+        <span>Scikit-learn</span>
+        <span>Machine Learning</span>
+        <span>Classification</span>
+        <span>Cross-Validation</span>
+        <span>Hyperparameter Optimisation</span>
+        <span>Data Visualisation</span>
+        <span>Statistical Analysis</span>
+      </div>
+
+    </section>
+
+
+    <!-- PROJECT OUTPUTS -->
+    <section>
+
+      <h2>Project Outputs</h2>
+
+      <p>
+        The full analysis, Jupyter notebooks, figures and instructions
+        for reproducing the results are available in the GitHub repository.
+      </p>
+
+      <div class="output-links">
+
+        <a
+          href="https://github.com/matthewduke36/predictive-maintenance-ml"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="output-button"
+        >
+          View GitHub Repository
+        </a>
+
+        <a
+          href="https://github.com/matthewduke36/predictive-maintenance-ml/blob/main/notebooks/02_model_training.ipynb"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="output-button secondary"
+        >
+          View Model Training Notebook
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
