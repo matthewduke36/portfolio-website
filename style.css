@@ -617,3 +617,9 @@ main,
   margin-right: auto;
   box-sizing: border-box;
 }
+
+
+/* Spacing between project cards */
+.project-card + .project-card {
+  margin-top: 35px;
+}
